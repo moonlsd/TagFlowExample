@@ -21,9 +21,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: "TagCell", bundle: nil)
-        self.collectionView.registerNib(cellNib, forCellWithReuseIdentifier: "TagCell")
-        self.collectionView.backgroundColor = UIColor.clearColor()
-        self.sizingCell = (cellNib.instantiateWithOwner(nil, options: nil) as NSArray).firstObject as! TagCell?
+        self.collectionView.register(cellNib, forCellWithReuseIdentifier: "TagCell")
+        self.collectionView.backgroundColor = UIColor.clear
+        self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! TagCell?
         self.flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
         for name in TAGS {
             let tag = Tag()
@@ -32,31 +32,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tags.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TagCell", forIndexPath: indexPath) as! TagCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
         self.configureCell(cell, forIndexPath: indexPath)
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         self.configureCell(self.sizingCell!, forIndexPath: indexPath)
-        return self.sizingCell!.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
         tags[indexPath.row].selected = !tags[indexPath.row].selected
         self.collectionView.reloadData()
     }
     
-    func configureCell(cell: TagCell, forIndexPath indexPath: NSIndexPath) {
+    func configureCell(_ cell: TagCell, forIndexPath indexPath: IndexPath) {
         let tag = tags[indexPath.row]
         cell.tagName.text = tag.name
-        cell.tagName.textColor = tag.selected ? UIColor.whiteColor() : UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        cell.tagName.textColor = tag.selected ? UIColor.white : UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         cell.backgroundColor = tag.selected ? UIColor(red: 0, green: 1, blue: 0, alpha: 1) : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
     }
 }
