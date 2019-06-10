@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    let TAGS = ["Tech", "Design", "Humor", "Travel", "Music", "Writing", "Social Media", "Life", "Education", "Edtech", "Education Reform", "Photography", "Startup", "Poetry", "Women In Tech", "Female Founders", "Business", "Fiction", "Love", "Food", "Sports"]
+    let TAGS = ["Tech", "Design", "Humor", "Travel", "Music", "Writing", "Social Media", "Life", "Education", "Edtech", "Education Reform", "Photography", "Startup", "Poetry", "Women In Tech", "Female Founders", "Business", "Fiction", "Love", "Food", "Sports", "This is very long text with noun, adjective, verb and the sunshine is all over the mountain"]
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: FlowLayout!
@@ -43,6 +43,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        self.sizingCell?.setMaximumCellWidth(collectionView.frame.width)
         self.configureCell(self.sizingCell!, forIndexPath: indexPath)
         return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
