@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17D102" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,15 +22,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to CodenTrick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-LT-ZEx">
-                                <rect key="frame" x="16" y="14" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="28" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wqk-of-ihU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZJ-6z-Dhi">
-                                <rect key="frame" x="274" y="10" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZJ-6z-Dhi">
+                                <rect key="frame" x="313" y="23.5" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="NyN-qH-vD5"/>
+                                    <constraint firstAttribute="height" constant="30" id="fpm-Sc-0X3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.25562868010000001" green="0.4262273171" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,20 +43,23 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IxZ-th-JDX">
-                                <rect key="frame" x="0.0" y="48" width="320" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="61.5" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="EgJ-me-muU"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow a few tags to get your personalized reading list started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-lY-xjf">
-                                <rect key="frame" x="16" y="58" width="288" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="28" y="70.5" width="319" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="wyN-5M-Ehf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rdo-Ii-NdV">
-                                <rect key="frame" x="0.0" y="112" width="320" height="456"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="118.5" width="375" height="548.5"/>
                                 <collectionViewLayout key="collectionViewLayout" id="swT-dG-eKG" customClass="FlowLayout" customModule="TagFlowLayout" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCell" id="V6s-rd-egW">
@@ -70,6 +78,24 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nBK-lY-xjf" firstAttribute="top" secondItem="IxZ-th-JDX" secondAttribute="bottom" constant="8" id="2iO-yy-YId"/>
+                            <constraint firstItem="ZZJ-6z-Dhi" firstAttribute="centerY" secondItem="uWc-LT-ZEx" secondAttribute="centerY" id="4Br-dh-8Pw"/>
+                            <constraint firstItem="ZZJ-6z-Dhi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="7PA-yz-kKU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nBK-lY-xjf" secondAttribute="trailing" constant="12" id="7Vk-hj-olB"/>
+                            <constraint firstItem="rdo-Ii-NdV" firstAttribute="top" secondItem="nBK-lY-xjf" secondAttribute="bottom" id="7hg-bz-Rbr"/>
+                            <constraint firstAttribute="trailing" secondItem="rdo-Ii-NdV" secondAttribute="trailing" id="94I-Nc-Hyh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZZJ-6z-Dhi" secondAttribute="trailing" constant="16" id="DEE-bn-5fD"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rdo-Ii-NdV" secondAttribute="bottom" id="Mfm-Ay-nzi"/>
+                            <constraint firstItem="uWc-LT-ZEx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="O69-f2-FdB"/>
+                            <constraint firstAttribute="trailing" secondItem="uWc-LT-ZEx" secondAttribute="trailing" constant="16" id="WbF-Oa-6AL"/>
+                            <constraint firstItem="uWc-LT-ZEx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="WeA-eJ-g5b"/>
+                            <constraint firstItem="rdo-Ii-NdV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="d2T-EH-fhZ"/>
+                            <constraint firstItem="IxZ-th-JDX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="dZ8-Mw-MSa"/>
+                            <constraint firstAttribute="trailing" secondItem="IxZ-th-JDX" secondAttribute="trailing" id="e7f-w3-Od5"/>
+                            <constraint firstItem="IxZ-th-JDX" firstAttribute="top" secondItem="ZZJ-6z-Dhi" secondAttribute="bottom" constant="8" id="ldt-dB-BLV"/>
+                            <constraint firstItem="nBK-lY-xjf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="12" id="tcA-fl-myx"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="rdo-Ii-NdV" id="ey0-JN-xwb"/>
