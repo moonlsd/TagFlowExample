@@ -24,7 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "TagCell")
         self.collectionView.backgroundColor = UIColor.clear
         self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! TagCell?
-        self.flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
+        self.flowLayout.sectionInset = UIEdgeInsets.init(top: 8, left: 8, bottom: 8, right: 8)
         for name in TAGS {
             let tag = Tag()
             tag.name = name
@@ -45,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         self.sizingCell?.setMaximumCellWidth(collectionView.frame.width)
         self.configureCell(self.sizingCell!, forIndexPath: indexPath)
-        return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        return self.sizingCell!.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
